@@ -1,0 +1,29 @@
+arrays - split
+
+Write a method named split that accepts an array of integers as a parameter and returns a new array twice as large as the original, 
+replacing every integer from the original array with a pair of integers, each half the original. If a number in the original array is odd,
+then the first number in the new pair should be one higher than the second so that the sum equals the original number. For example, if a variable named a refers to an array storing the values {18, 7, 4, 24, 11}, 
+the call of split(a) should return a new array containing {9, 9, 4, 3, 2, 2, 12, 12, 6, 5}. 
+(The number 18 is split into the pair 9, 9, the number 7 is split into 4, 3, the number 4 is split into 2, 2, the number 24 is split into 12, 12 and the number 11 is split into 6, 5.)
+
+
+ public static int[] split(int[] nums) {
+        int[] array = new int[nums.length * 2];
+        int index = 0;
+        for(int i = 0; i < nums.length; i++) {
+            if (nums[i] % 2 == 0) {
+                array[index] = nums[i] / 2;
+                array[index + 1] = nums[i] / 2;
+                index += 2;
+            } else {
+                int difference = nums[i] / 2;
+                array[index] = nums[i] - difference;
+                array[index + 1] = difference;
+                index += 2;
+            }
+        }
+        return array;
+    }
+
+
+
