@@ -1,0 +1,25 @@
+strings : containsTwice
+
+Write a method named containsTwice that accepts a string and a character as parameters and returns true if that character occurs two or more times in the string. 
+For example, the call of containsTwice("hello", 'l') should return true because there are two 'l' characters in that string.
+
+public static boolean containsTwice(String str, char targetChar) {
+        int counter = 0;
+        for(int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == targetChar) {
+                counter++;
+                for (int j = i + 1; j < str.length(); j++) {
+                    if (str.charAt(j) == targetChar) {
+                        counter++;
+                        if (counter == 2) {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+
+
