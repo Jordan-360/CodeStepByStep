@@ -1,0 +1,24 @@
+strings : swapPairs
+
+Write a method named swapPairs that accepts a string as a parameter and returns a new string such that each pair of adjacent letters will 
+be reversed. If the string has an odd number of letters, the last letter is unchanged. For example, if a string variable s stores "example", 
+the call of swapPairs(s); should return "xemalpe". If s had been "hello there", the call would produce "ehll ohtree".
+
+ public static String swapPairs(String str) {
+        String[] string = new String[str.length()];
+        for(int i = 0; i < string.length; i++) {
+            string[i] = String.valueOf(str.charAt(i));
+        }
+
+        for(int i = 0; i < string.length - 1; i+=2) {
+            String temp = string[i + 1];
+            string[i + 1] = string[i];
+            string[i] = temp;
+        }
+
+        return String.join("", string);
+
+    }
+
+
+
