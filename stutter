@@ -1,0 +1,18 @@
+strings : stutter
+
+Write a method named stutter that accepts a string parameter returns a new string replacing each of its characters with two consecutive copies of that character.
+For example, a call of stutter("hello") would return "hheelllloo".
+
+ public static String stutter(String str) {
+        String stutteredString = "";
+        int stutterCount = 2;
+        for(int i = 0; i < str.length(); i++) {
+            for(int j = 0; j < stutterCount; j++) {
+                stutteredString += str.charAt(i);
+            }
+        }
+        return stutteredString;
+    }
+
+
+
