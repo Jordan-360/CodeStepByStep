@@ -1,0 +1,24 @@
+strings : removeDuplicates
+
+Write a method named removeDuplicates that accepts a string parameter and returns a new string with all consecutive occurrences of the same character in the string replaced by a single occurrence of that character. 
+For example, the call of removeDuplicates("bookkeeeeeper") should return "bokeper".
+
+  public static String removeDuplicates(String str) {
+        ArrayList<Character> listOfStrings = new ArrayList<>();
+        String stringWithDuplicatesRemoved = "";
+        for(int i = 0; i < str.length(); i++) {
+            listOfStrings.add(str.charAt(i));
+        }
+        for(int i = 0; i < listOfStrings.size() - 1; i++) {
+            if (listOfStrings.get(i) == listOfStrings.get(i + 1)) {
+                listOfStrings.remove(i);
+                i--;
+            }
+        }
+        for(int i = 0; i < listOfStrings.size(); i++) {
+            stringWithDuplicatesRemoved += listOfStrings.get(i);
+        }
+        return stringWithDuplicatesRemoved;
+    }
+
+
