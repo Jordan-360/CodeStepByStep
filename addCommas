@@ -1,0 +1,28 @@
+strings : addCommas
+
+Write a method named addCommas that accepts a string representing a number and returns a new string with 
+a comma at every third position, starting from the right. For example, the call of addCommas("12345678") returns "12,345,678".
+
+
+ public static String addCommas(String str) {
+       if(str.length() <= 3) {
+            return str;
+        }
+        List<String> list = new ArrayList<>();
+        String str2 = "";
+        for(int i = 0; i < str.length(); i++) {
+            list.add(str.substring(i, i + 1));
+        }
+        int listSize = list.size();
+        for(int i = listSize - 3; i > 0; i-=3) {
+          list.add(i, ",");
+        }
+        for(String string : list) {
+            str2 += string;
+        }
+        return str2;
+    }
+
+
+
+
