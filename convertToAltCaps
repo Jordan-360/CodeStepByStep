@@ -1,0 +1,29 @@
+strings : convertToAltCaps 
+
+Write a method named convertToAltCaps that accepts a string as a parameter and returns a version of the string where alternating letters are uppercase and lowercase, starting with the first letter in lowercase. \
+For example, the call of convertToAltCaps("Pikachu") should return "pIkAcHu".
+
+public static String convertToAltCaps(String str) {
+        int index = 0;
+        String convertedString = "";
+        if(str.isEmpty()) {
+            return str;
+        }
+        for(int i = 0; i < str.length(); i++) {
+             if(str.charAt(i) == ' ') {
+                 convertedString += str.charAt(i);
+             }  else if (index % 2 == 0) {
+                char targetChar = str.toLowerCase().charAt(i);
+                convertedString += targetChar;
+                 index++;
+            } else if(index % 2 == 1){
+                char targetChar = str.toUpperCase().charAt(i);
+                convertedString += targetChar;
+                 index++;
+            }
+        }
+        return convertedString;
+    }
+
+
+
