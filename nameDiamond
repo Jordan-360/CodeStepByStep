@@ -1,0 +1,26 @@
+strings : nameDiamond
+
+Write a method named nameDiamond that accepts a string as a parameter and prints it in a "diamond" format as shown below.
+For example, the call of nameDiamond("MARTY"); should print:
+
+M
+MA
+MAR
+MART
+MARTY
+ ARTY
+  RTY
+   TY
+    Y
+
+ public static void nameDiamond(String str) {
+        for(int i = 0; i < str.length(); i++) {
+            System.out.println(str.substring(0, i + 1));
+        }
+        for(int i = 1; i < str.length(); i++) {
+            for(int n = 0; n < i; n++) {
+                System.out.print(" ");
+            }
+            System.out.println(str.substring(i));
+        }
+    }
