@@ -1,0 +1,21 @@
+Collections - ArrayList : kCopies
+
+Write a method named kCopies that accepts an ArrayList of integers as a parameter and replaces every integer of value k with k copies of itself. 
+For example, if the list stores [4, 1, 2, 0, 3] before the method is called, it should store [4, 4, 4, 4, 1, 2, 2, 3, 3, 3] after the method finishes executing.
+Zeroes and negative numbers should be removed from the list.
+
+ public static void kCopies(ArrayList<Integer> listOfInts) {
+        ArrayList<Integer> modifiedList = new ArrayList<>();
+        for (int targetNumber : listOfInts) {
+            if (targetNumber > 0) {
+                for (int j = 0; j < targetNumber; j++) {
+                    modifiedList.add(targetNumber);
+                }
+            }
+        }
+        listOfInts.clear();
+        listOfInts.addAll(modifiedList);
+    }
+
+
+
