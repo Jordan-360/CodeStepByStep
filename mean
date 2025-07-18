@@ -1,0 +1,19 @@
+Collections - ArrayList : mean
+
+Write a method named mean that accepts as a parameter an ArrayList of real numbers, and returns the arithmetic mean (average) of the integers in the list as a real number. 
+For example, if the list passed contains {2.0, 4.5, 6.5, 1.0}, your method should return 3.5.
+If the list is empty, return 0.0. Do not modify the list that is passed in.
+
+
+
+ public static double mean(ArrayList<Double> numbers) {
+        double sum = 0.0;
+        double size = numbers.size();
+        if(numbers.isEmpty()) {
+            return sum;
+        }
+        for(int i = 0; i < numbers.size(); i++) {
+            sum += numbers.get(i);
+        }
+        return sum / size;
+    }
