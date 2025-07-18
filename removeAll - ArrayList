@@ -1,0 +1,16 @@
+Collections - ArrayList : removeAll
+
+Write a method named removeAll that accepts as a parameter an ArrayList of strings along with an element value string, and modifies the list to remove all occurrences of that string. 
+For example, if the list v contains {"a", "b", "c", "b", "b", "a", "b"}, the call of removeAll(v, "b"); should modify it to store {"a", "c", "a"}.
+
+ public static void removeAll(ArrayList<String> listOfStrings, String targetString) {
+        for (int i = 0; i < listOfStrings.size(); i++) {
+            if (listOfStrings.get(i).equals(targetString)) {
+                listOfStrings.remove(i);
+                i--;
+            }
+        }
+    }
+
+
+
