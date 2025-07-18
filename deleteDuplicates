@@ -1,0 +1,16 @@
+Collections - ArrayList : deleteDuplicates
+
+Write a method named deleteDuplicates that accepts as a parameter a sorted ArrayList of Strings and that removes any duplicate values from the list.
+For example, suppose that an ArrayList named list contains the values {"be", "be", "is", "not", "or", "question", "that", "the", "to", "to"} 
+After calling deleteDuplicates(list); the list should store the following values: {"be", "is", "not", "or", "question", "that", "the", "to"} 
+You should assume that the values in the list are sorted, and that therefore all of the duplicates will be grouped together.
+
+
+  public static void deleteDuplicates(ArrayList<String> list) {
+        for (int i = 0; i < list.size() - 1; i++) {
+            if (list.get(i).equals(list.get(i + 1))) {
+                list.remove(i + 1);
+                i--;
+            }
+        }
+    }
